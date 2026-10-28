@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#333">
+  <rect width="800" height="420" fill="#fff" stroke="#888"/>
+  <text x="16" y="20" font-size="11" fill="#888">W3 · ERROR: CIERRE CON PENDIENTES (Lo-Fi v1) — RF-04, RF-05</text>
+  <rect x="0" y="30" width="800" height="44" fill="#eee" stroke="#888"/>
+  <text x="16" y="57">Dashboard › Sesión P-07</text>
+  <rect x="24" y="92" width="752" height="80" fill="#fff" stroke="#333" stroke-width="3"/>
+  <text x="44" y="125" font-size="15" font-weight="700">✕ No se puede cerrar: hay ítems obligatorios o pasos pendientes.</text>
+  <text x="44" y="150" font-size="12" fill="#666">(Alerta con foco · bloquea éxito falso — rama editar)</text>
+  <rect x="24" y="195" width="752" height="150" fill="#fafafa" stroke="#888"/>
+  <text x="40" y="220" font-size="12" font-weight="700">Checklist (* obligatorio)</text>
+  <rect x="40" y="236" width="12" height="12" fill="#fff" stroke="#333"/><text x="60" y="247">Grabación guardada *</text>
+  <rect x="40" y="262" width="12" height="12" fill="#fff" stroke="#333"/><text x="60" y="273">Cuestionario SUS aplicado *</text>
+  <rect x="600" y="362" width="176" height="36" fill="#555"/><text x="688" y="385" fill="#fff" text-anchor="middle">Cerrar sesión</text>
+  <text x="24" y="405" font-size="11" fill="#666">Nunca se muestra “Completado” si faltan obligatorios · Nielsen #5 prevención de errores</text>
+</svg>
