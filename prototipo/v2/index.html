@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard UX · v2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="saltar" href="#main">Saltar al contenido</a>
+  <header class="barra">
+    <span class="marca">Dashboard UX</span>
+    <nav aria-label="Migas de pan" id="migas"></nav>
+    <span class="guardado" id="guardado" aria-live="polite"></span>
+  </header>
+
+  <main id="main">
+    <!-- Pantalla 1: Inicio -->
+    <section id="p-inicio" class="pantalla" aria-labelledby="t-inicio">
+      <h1 id="t-inicio" tabindex="-1">Sesiones de prueba</h1>
+      <div id="lista-sesiones" class="tarjetas"></div>
+    </section>
+
+    <!-- Pantalla 2: Sesión -->
+    <section id="p-sesion" class="pantalla" aria-labelledby="t-sesion" hidden>
+      <h1 id="t-sesion" tabindex="-1">Sesión P-07 · App de matrícula</h1>
+      <div id="aviso" class="aviso" role="status" hidden></div>
+      <div id="error" class="error" role="alert" tabindex="-1" hidden></div>
+
+      <nav aria-label="Pasos de la prueba">
+        <ol id="stepper" class="stepper"></ol>
+      </nav>
+
+      <div class="columnas">
+        <form id="registro" class="card" novalidate>
+          <h2 id="t-registro" tabindex="-1">Registro</h2>
+          <div class="fila">
+            <label>Errores <input id="f-errores" type="number" min="0" inputmode="numeric"></label>
+            <label>Tiempo (min) <input id="f-tiempo" type="number" min="0" inputmode="numeric"></label>
+          </div>
+          <label>Observaciones <textarea id="f-obs" rows="4"></textarea></label>
+          <div class="acciones">
+            <button type="button" id="b-completar" class="primario">Completar paso</button>
+            <button type="button" id="b-reabrir">Reabrir paso</button>
+          </div>
+        </form>
+
+        <section class="card" aria-labelledby="t-check">
+          <h2 id="t-check" tabindex="-1">Checklist de cierre</h2>
+          <div id="checklist"></div>
+          <div class="acciones">
+            <button type="button" id="b-cerrar" class="primario">Revisar y cerrar sesión</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Pantalla 3: Revisión previa (incidencia sorpresa · RF-06) -->
+    <section id="p-revision" class="pantalla" aria-labelledby="t-revision" hidden>
+      <h1 id="t-revision" tabindex="-1">Revisión previa al cierre</h1>
+      <p>Comprueba el resumen. Puedes editar cualquier sección antes de confirmar.</p>
+      <div id="error-cierre" class="error" role="alert" tabindex="-1" hidden></div>
+      <div class="card revision" id="revision"></div>
+      <div class="acciones">
+        <button type="button" id="b-confirmar" class="primario">Confirmar cierre</button>
+        <button type="button" id="b-volver-sesion">Volver a la sesión</button>
+      </div>
+    </section>
+
+    <!-- Pantalla 4: Confirmación -->
+    <section id="p-cerrada" class="pantalla" aria-labelledby="t-cerrada" hidden>
+      <div class="card exito">
+        <div class="icono" aria-hidden="true">✓</div>
+        <h1 id="t-cerrada" tabindex="-1">Sesión P-07 cerrada y verificada</h1>
+        <p>Código de verificación: <span class="codigo" id="codigo"></span></p>
+        <p id="cerrada-en"></p>
+      </div>
+      <div class="card resumen" id="resumen" style="margin-top:16px"></div>
+      <p id="verif" class="verif" role="status"></p>
+      <div class="acciones">
+        <button type="button" id="b-comprobar">Comprobar de nuevo</button>
+        <button type="button" id="b-volver" class="primario">Volver al Dashboard</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="anuncio" class="sr" aria-live="polite"></div>
+  <footer class="pie">
+    Prototipo v2 · IHC-A-12 · <button type="button" id="b-reset" class="enlace">Restablecer datos de demostración</button>
+    · Simular fallo de guardado: <a href="?fallo=1">activar</a> / <a href="?">desactivar</a>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
