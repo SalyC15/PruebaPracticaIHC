@@ -3,25 +3,60 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard UX · v2</title>
+  <title>Dashboard UX &amp; CaféU · Prototipo v2 (12 Tarjetas IHC-A-01 a IHC-A-12)</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="saltar" href="#main">Saltar al contenido</a>
   <header class="barra">
-    <span class="marca">Dashboard UX</span>
+    <span class="marca">IHC · Paralelo A</span>
     <nav aria-label="Migas de pan" id="migas"></nav>
+    <div class="herramientas-barra" role="group" aria-label="Accesos rápidos de tarjetas">
+      <label for="sel-tarjeta-rapida" class="sr">Ir a tarjeta</label>
+      <select id="sel-tarjeta-rapida" aria-label="Seleccionar tarjeta IHC-A-01 a IHC-A-12">
+        <option value="">Ir a tarjeta (12 tarjetas)…</option>
+        <option value="IHC-A-01">IHC-A-01 · Precio cambia al editar (CaféU)</option>
+        <option value="IHC-A-02">IHC-A-02 · Quitar con teclado (CaféU)</option>
+        <option value="IHC-A-03">IHC-A-03 · Estado de pedido pendiente (CaféU)</option>
+        <option value="IHC-A-04">IHC-A-04 · Alergia añadida (CaféU)</option>
+        <option value="IHC-A-05">IHC-A-05 · Presupuesto agotado (CaféU)</option>
+        <option value="IHC-A-06">IHC-A-06 · Falla de conexión (CaféU)</option>
+        <option value="IHC-A-07">IHC-A-07 · Paso de checklist obligatorio (Dashboard)</option>
+        <option value="IHC-A-08">IHC-A-08 · Guardado inconsistente (Dashboard)</option>
+        <option value="IHC-A-09">IHC-A-09 · Dato personal inesperado (Dashboard)</option>
+        <option value="IHC-A-10">IHC-A-10 · Stepper sin color (Dashboard)</option>
+        <option value="IHC-A-11">IHC-A-11 · Vista estrecha 320px (Dashboard)</option>
+        <option value="IHC-A-12">IHC-A-12 · Finalización prematura (Dashboard)</option>
+      </select>
+      <button type="button" id="b-toggle-grises" class="btn-mini" aria-pressed="false" title="Tarjeta IHC-A-10: Probar en escala de grises">Escala de grises (A-10)</button>
+      <button type="button" id="b-toggle-320" class="btn-mini" aria-pressed="false" title="Tarjeta IHC-A-11: Probar vista estrecha de 320 px">Vista 320px (A-11)</button>
+    </div>
     <span class="guardado" id="guardado" aria-live="polite"></span>
   </header>
 
   <main id="main">
     <!-- Pantalla 1: Inicio -->
     <section id="p-inicio" class="pantalla" aria-labelledby="t-inicio">
-      <h1 id="t-inicio" tabindex="-1">Sesiones de prueba</h1>
+      <h1 id="t-inicio" tabindex="-1">Sesiones de prueba y Catálogo de 12 Tarjetas</h1>
       <div id="lista-sesiones" class="tarjetas"></div>
+
+      <section class="bloque-12-tarjetas" aria-labelledby="t-catalogo-12">
+        <div class="cabecera-catalogo">
+          <div>
+            <h2 id="t-catalogo-12">Las 12 Tarjetas de la Prueba Práctica (`IHC-A-01` a `IHC-A-12`)</h2>
+            <p class="subtitulo-catalogo">Selecciona cualquier tarjeta para probar su <strong>incidencia sorpresa en vivo</strong>, verificar sus requisitos y consultar su defensa individual.</p>
+          </div>
+          <div class="filtros-tarjetas" role="group" aria-label="Filtrar tarjetas por caso base">
+            <button type="button" class="btn-mini activo" data-filtro="todas">Todas (12)</button>
+            <button type="button" class="btn-mini" data-filtro="CafeU">CaféU (A-01 a A-06)</button>
+            <button type="button" class="btn-mini" data-filtro="Dashboard UX">Dashboard UX (A-07 a A-12)</button>
+          </div>
+        </div>
+        <div id="grid-12-tarjetas" class="grid-tarjetas-12"></div>
+      </section>
     </section>
 
-    <!-- Pantalla 2: Sesión -->
+    <!-- Pantalla 2: Sesión (Flujo principal Dashboard UX · IHC-A-07 a IHC-A-12) -->
     <section id="p-sesion" class="pantalla" aria-labelledby="t-sesion" hidden>
       <h1 id="t-sesion" tabindex="-1">Sesión P-07 · App de matrícula</h1>
       <div id="aviso" class="aviso" hidden></div>
@@ -34,6 +69,12 @@
       <div class="columnas">
         <form id="registro" class="card" novalidate>
           <h2 id="t-registro" tabindex="-1">Registro</h2>
+          <div class="fila">
+            <label>Código de participante (anónimo · IHC-A-09)
+              <input id="f-participante" type="text" value="P-07" aria-describedby="ayuda-privacidad">
+            </label>
+            <span id="ayuda-privacidad" class="nota-privacidad">✓ Privacidad protegida: solo código anónimo (sin nombres personales).</span>
+          </div>
           <div class="fila">
             <label>Errores <input id="f-errores" type="number" min="0" inputmode="numeric"></label>
             <label>Tiempo (min) <input id="f-tiempo" type="number" min="0" inputmode="numeric"></label>
@@ -49,25 +90,53 @@
           <h2 id="t-check" tabindex="-1">Checklist de cierre</h2>
           <div id="checklist"></div>
           <div class="acciones">
-            <button type="button" id="b-cerrar" class="primario">Cerrar sesión</button>
+            <button type="button" id="b-cerrar" class="primario">Revisar y cerrar sesión</button>
           </div>
         </section>
       </div>
     </section>
 
-    <!-- Pantalla 3: Confirmación -->
-    <section id="p-cerrada" class="pantalla" aria-labelledby="t-cerrada" hidden>
-      <h1 id="t-cerrada" tabindex="-1">Sesión cerrada</h1>
-      <div class="card" id="resumen"></div>
+    <!-- Pantalla 3: Revisión previa (incidencia sorpresa · RF-06) -->
+    <section id="p-revision" class="pantalla" aria-labelledby="t-revision" hidden>
+      <h1 id="t-revision" tabindex="-1">Revisión previa al cierre</h1>
+      <p>Comprueba el resumen. Puedes editar cualquier sección antes de confirmar.</p>
+      <div id="error-cierre" class="error" role="alert" tabindex="-1" hidden></div>
+      <div class="card revision" id="revision"></div>
       <div class="acciones">
+        <button type="button" id="b-confirmar" class="primario">Confirmar cierre</button>
+        <button type="button" id="b-volver-sesion">Volver a la sesión</button>
+      </div>
+    </section>
+
+    <!-- Pantalla 4: Confirmación -->
+    <section id="p-cerrada" class="pantalla" aria-labelledby="t-cerrada" hidden>
+      <div class="card exito">
+        <div class="icono" aria-hidden="true">✓</div>
+        <h1 id="t-cerrada" tabindex="-1">Sesión P-07 cerrada y verificada</h1>
+        <p>Código de verificación: <span class="codigo" id="codigo"></span></p>
+        <p id="cerrada-en"></p>
+      </div>
+      <div class="card resumen" id="resumen" style="margin-top:16px"></div>
+      <p id="verif" class="verif" role="status"></p>
+      <div class="acciones">
+        <button type="button" id="b-comprobar">Comprobar de nuevo</button>
         <button type="button" id="b-volver" class="primario">Volver al Dashboard</button>
       </div>
+    </section>
+
+    <!-- Pantalla 5: Simulador y Defensa de Tarjeta Individual (IHC-A-01 a IHC-A-12) -->
+    <section id="p-tarjeta" class="pantalla" aria-labelledby="t-tarjeta-detalle" hidden>
+      <div class="acciones" style="margin-top:0; margin-bottom:12px">
+        <button type="button" id="b-volver-catalogo">← Volver al catálogo de 12 tarjetas</button>
+      </div>
+      <div id="contenido-tarjeta-detalle"></div>
     </section>
   </main>
 
   <div id="anuncio" class="sr" aria-live="polite"></div>
   <footer class="pie">
-    Prototipo v2 · IHC-A-12 · <button type="button" id="b-reset" class="enlace">Restablecer datos de demostración</button>
+    Prototipo v2 · 12 Tarjetas (`IHC-A-01` a `IHC-A-12`) · <button type="button" id="b-reset" class="enlace">Restablecer datos de demostración</button>
+    · Simular fallo de guardado: <a href="?fallo=1">activar</a> / <a href="?">desactivar</a>
   </footer>
   <script src="app.js"></script>
 </body>
