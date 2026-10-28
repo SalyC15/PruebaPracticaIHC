@@ -56,4 +56,4 @@ Lectura: los dos valles (−2) coinciden con los momentos de verdad; ningún tou
 
 ## 6. Issues abiertos
 
-Ver texto listo para publicar en [`evidencias/issues.md`](../evidencias/issues.md) (#1 F1, #2 F2, #3 F3 ).
+Ver texto listo para publicar en [`evidencias/issues.md`](../evidencias/issues.md) (#1 F1, #2 F2, #3 F3 y #4 incidencia sorpresa).
