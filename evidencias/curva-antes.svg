@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <rect width="760" height="360" fill="#fff"/>
+  <text x="380" y="26" text-anchor="middle" font-size="16" font-weight="600" fill="#222">Curva emocional inicial (estimada) — IHC-A-12</text>
+  <!-- eje Y: +2 en y=70, -2 en y=290, 55 px por nivel -->
+  <g stroke="#ddd">
+    <line x1="80" y1="70" x2="730" y2="70"/><line x1="80" y1="125" x2="730" y2="125"/>
+    <line x1="80" y1="180" x2="730" y2="180" stroke="#999"/>
+    <line x1="80" y1="235" x2="730" y2="235"/><line x1="80" y1="290" x2="730" y2="290"/>
+  </g>
+  <g fill="#555" text-anchor="end">
+    <text x="70" y="74">+2 😊</text><text x="70" y="129">+1</text><text x="70" y="184">0 😐</text>
+    <text x="70" y="239">−1</text><text x="70" y="294">−2 😟</text>
+  </g>
+  <polyline fill="none" stroke="#b42318" stroke-width="3"
+    points="120,235 220,235 320,290 420,180 520,235 620,290 710,235"/>
+  <g fill="#b42318">
+    <circle cx="120" cy="235" r="6"/><circle cx="220" cy="235" r="6"/><circle cx="320" cy="290" r="8"/>
+    <circle cx="420" cy="180" r="6"/><circle cx="520" cy="235" r="6"/><circle cx="620" cy="290" r="8"/><circle cx="710" cy="235" r="6"/>
+  </g>
+  <g fill="#b42318" font-weight="700" text-anchor="middle">
+    <text x="320" y="315">MdV 1</text><text x="620" y="315">MdV 2</text>
+  </g>
+  <g fill="#333" text-anchor="middle">
+    <text x="120" y="340">T1 Entrar</text><text x="220" y="340">T2 Localizar</text><text x="320" y="340">T3 Retomar</text>
+    <text x="420" y="340">T4 Registrar</text><text x="520" y="340">T5 Checklist</text><text x="620" y="340">T6 Cerrar</text><text x="710" y="340">T7 Consultar</text>
+  </g>
+</svg>
