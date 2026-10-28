@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#333">
+  <rect width="800" height="520" fill="#fff" stroke="#888"/>
+  <text x="16" y="20" font-size="11" fill="#888">W1 · INICIO (Lo-Fi) — RF-02</text>
+  <rect x="0" y="30" width="800" height="44" fill="#eee" stroke="#888"/>
+  <rect x="16" y="42" width="110" height="20" fill="#ccc"/><text x="140" y="57">Dashboard UX › Sesiones</text>
+  <circle cx="770" cy="52" r="12" fill="#ccc"/>
+  <text x="24" y="110" font-size="20" font-weight="600">Sesiones de prueba</text>
+  <!-- card interrumpida -->
+  <rect x="24" y="130" width="752" height="130" fill="#f7f7f7" stroke="#333" stroke-width="2"/>
+  <rect x="40" y="146" width="120" height="22" fill="none" stroke="#333" stroke-dasharray="4 2"/><text x="48" y="162">⚠ INTERRUMPIDA</text>
+  <text x="40" y="192" font-size="16" font-weight="600">P-07 · App de matrícula</text>
+  <text x="40" y="214">Quedó en: paso 4 de 6 (Tarea 2) · Guardado: ayer 10:42</text>
+  <rect x="40" y="226" width="300" height="10" fill="#ddd"/><rect x="40" y="226" width="150" height="10" fill="#777"/>
+  <text x="350" y="236" font-size="12">3 de 6 pasos · 2 de 4 obligatorios</text>
+  <rect x="620" y="200" width="140" height="40" fill="#555"/><text x="690" y="225" fill="#fff" text-anchor="middle" font-weight="600">Retomar ▸</text>
+  <!-- otras -->
+  <rect x="24" y="280" width="368" height="100" fill="#fff" stroke="#888"/>
+  <text x="40" y="305">✓ CERRADA</text><text x="40" y="330" font-weight="600">P-06 · App de matrícula</text><text x="40" y="352" font-size="12">Cerrada 12/10 · código 7F3A</text>
+  <rect x="408" y="280" width="368" height="100" fill="#fff" stroke="#888"/>
+  <text x="424" y="305">○ PROGRAMADA</text><text x="424" y="330" font-weight="600">P-08 · App de matrícula</text><text x="424" y="352" font-size="12">30/10 · 10:00</text>
+  <g font-size="11" fill="#666">
+    <text x="24" y="420">① Badge con texto (no solo color) · ② Paso y hora de guardado = reconocer en vez de recordar</text>
+    <text x="24" y="438">③ Única acción primaria “Retomar” · Card UI = región común (Gestalt)</text>
+  </g>
+</svg>
